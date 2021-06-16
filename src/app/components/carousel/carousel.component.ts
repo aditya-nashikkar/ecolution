@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-import { CarouselConstant as carouselConstant } from './../carousel.constant';
+import { CarouselConstant as carouselConstant } from './carousel.constant';
 
 @Component({
   selector: 'eco-carousel',
