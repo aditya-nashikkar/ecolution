@@ -1,4 +1,4 @@
-import { Carousel } from "../models/carousel";
+import { Carousel } from "../../models/carousel";
 
 export class CarouselConstant {
     
