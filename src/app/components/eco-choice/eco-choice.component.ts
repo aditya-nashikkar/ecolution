@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-eco-choice',
+  selector: 'eco-eco-choice',
   templateUrl: './eco-choice.component.html',
   styleUrls: ['./eco-choice.component.scss']
 })

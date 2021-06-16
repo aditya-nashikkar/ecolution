@@ -1,2 +1,16 @@
 <eco-top-nav [activeLink]=activeLink></eco-top-nav>
-take-action!
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">{{ infoSectionHeader }}</h1>
+        <div class="row">
+            <ng-container *ngFor="let ism of infoSectionMain">
+                <div class="col-md-6 col-lg-6">
+                    <p class="display-5">{{ ism }}</p>
+                </div>
+            </ng-container>    
+        </div>
+        <p>
+            <a class="btn btn-primary btn-lg float-right" href="#" role="button">Learn more &raquo;</a>
+        </p>
+    </div>
+</div>

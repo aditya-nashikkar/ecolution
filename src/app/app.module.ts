@@ -10,6 +10,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { TakeActionComponent } from './components/take-action/take-action.component';
 import { EcoChoiceComponent } from './components/eco-choice/eco-choice.component';
 import { HomeComponent } from './components/home/home.component';
+import { AlertsComponent } from './components/alerts/alerts.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HomeComponent } from './components/home/home.component';
     AboutUsComponent,
     TakeActionComponent,
     EcoChoiceComponent,
-    HomeComponent
+    HomeComponent,
+    AlertsComponent
   ],
   imports: [
     BrowserModule,
