@@ -167,7 +167,7 @@ export class TakeActionConstant {
             factImage: './../../../assets/images/question/question_1.jpg',
             fact: {
                 factHeader: 'DID YOU KNOW?',
-                factMainContent: '10% of the plastic produced in Europe is used in the Automotive industry. An average car lasts 8 years and contains over 300 kg of plastic. \n\n Cars per capita range from a high of 1.27 in San Marino to only .002 in Sao Tome and Principe. The US average is .838 cars per person.'
+                factMainContent: 'A polar bear walks along a rocky shore, looking for food. The bear would usually be on the sea ice hunting for seals, pouncing when the seal comes up to breathe. But the ice has started to melt earlier and re-form later than it has in the past. Without the sea ice, the polar bear must scavenge for other, less nutritious food. These changes in polar sea ice are a result of climate change. But this isn’t just affecting polar bears—climate change affects everyone.'
             }
         },
         {
@@ -185,7 +185,7 @@ export class TakeActionConstant {
             factImage: './../../../assets/images/question/question_2.jpg',
             fact: {
                 factHeader: 'DID YOU KNOW?',
-                factMainContent: 'Plastic transformed our food supply. It provides inexpensive and clean packaging, increasing shelf life and safety while reducing food waste and transportation costs. Convenience foods rely heavily on single use packaging.'
+                factMainContent: 'Higher temperatures and drought increase the potential for wildfire. Climate change exacerbates the factors that create perfect fire conditions. Lower precipitation and warmer air temperatures dry the forests and other vegetation. Add strong winds and decades of fire suppression into the mix and you have a dangerous recipe for wildfire.'
             }
         },
         {
@@ -215,7 +215,7 @@ export class TakeActionConstant {
             factImage: './../../../assets/images/question/question_3.jpg',
             fact: {
                 factHeader: 'DID YOU KNOW?',
-                factMainContent: 'Plastics give us polyester, nylon, and spandex and are part of many other textiles. From the tips of our toes to the top of our heads we are wrapped in plastic.\n\nYou can reduce your footprint by buying fewer items, keeping them longer, and looking for natural fabrics like wool, cotton, hemp, bamboo, and leather.'
+                factMainContent: 'Climate change is depleting our essential fisheries. Over the past 80 years, a warming planet has disrupted critical fisheries worldwide--and many have declined precipitously. Warmer waters can make some fisheries smaller by putting metabolic stress on the fish, making it harder for them to reproduce or find food. Warm waters can also cause zooplankton, essential fish food, to decline. The impacts on smaller organisms then have cascading impacts on the rest of the food chain.'
             }
         },
         {
@@ -224,7 +224,7 @@ export class TakeActionConstant {
             factImage: './../../../assets/images/question/question_4.jpg',
             fact: {
                 factHeader: 'DID YOU KNOW?',
-                factMainContent: '20% of plastic produced in Europe is used in building and construction.\n\nPlastic gives us electrical systems, plumbing, and energy efficient windows. A further 17% of the plastic produced is used in things like appliances and furniture.\n\nThe larger your home, the more plastic it uses. Each person that lives in your home is accountable for a portion of that plastic footprint.'
+                factMainContent: 'The Maldives archipelago in the Indian Ocean includes 1,192 islands. In 1992, the government added one more—an artificial construct that serves as a landfill, where 500 tons of trash are dumped every day.\n\nTwo truisms of island-living everywhere are especially true in the Maldives: Most consumer goods must be shipped in, and most waste is produced by tourists. In the Maldives, a developing nation that lacks much local manufacturing, a single tourist produces almost twice as much trash per day as a resident of the capital city of Malé, and five times as much as residents of the other 200 populated islands, according to government statistics. Consequently, the tiny island nation was ranked as the world’s fourth largest producer per capita of mismanaged waste, in 2019.'
             }
         }
     ];
