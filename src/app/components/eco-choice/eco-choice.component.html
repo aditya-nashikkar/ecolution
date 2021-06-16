@@ -1,2 +1,16 @@
 <eco-top-nav [activeLink]=activeLink></eco-top-nav>
-eco-choice!
+<div class="container adjust-main-content">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 mt-4">
+            <div class="form-group">
+                <select name="" id="" class="form-control form-control-md">
+                    <option value="">Select products</option>
+                    <option *ngFor="let availableProduct of availableProducts" [value]="availableProduct">
+                        {{ availableProduct }}
+                    </option>
+                </select>
+              </div>
+        </div>
+        <div class="col-md-6 col-lg-6">asdas</div>
+    </div>
+</div>
