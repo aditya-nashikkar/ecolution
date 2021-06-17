@@ -11,6 +11,7 @@ export class EcoChoiceComponent implements OnInit {
 
   activeLink = 'ecoChoice';
   availableProducts = ecoChoiceConstant.AVAILABLE_PRODUCTS;
+  CARBON_FOOTPRINT = 'Carbon footprint';
   productsList = ecoChoiceConstant.PRODUCTS_LIST;
   selectedProject: AlternativeProduct = {
     searchedProduct: {
@@ -20,17 +21,31 @@ export class EcoChoiceComponent implements OnInit {
     }, 
     alternativeProducts: []
   };
+  selectedAlternativeProduct = {
+    productName: '',
+    carbonFootprint: 0,
+    imagePath: ''
+  };
   selectedProjectName = '';
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.productsList);
+    
   }
 
   selectProduct(): void {
     this.selectedProject = this.productsList.filter(fl => fl.searchedProduct.productName === this.selectedProjectName)[0];
-    console.log(this.selectedProject.searchedProduct.imagePath);
+    this.selectedAlternativeProduct = this.selectedProject.alternativeProducts[0];
+  }
+
+  selectAlternativeProduct(index: number): void {
+
+    for (const counter in this.selectedProject.alternativeProducts) {
+      this.selectedProject.alternativeProducts[counter].isSelected = false;
+    }
+    this.selectedProject.alternativeProducts[index].isSelected = true;
+    this.selectedAlternativeProduct = this.selectedProject.alternativeProducts[index];
   }
 
 }

@@ -19,7 +19,6 @@ export class TakeActionComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.selectedQuestion);
   }
 
   getQuestionByNumber(step: string) {
