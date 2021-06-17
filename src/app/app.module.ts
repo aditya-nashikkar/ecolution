@@ -11,6 +11,7 @@ import { TakeActionComponent } from './components/take-action/take-action.compon
 import { EcoChoiceComponent } from './components/eco-choice/eco-choice.component';
 import { HomeComponent } from './components/home/home.component';
 import { AlertsComponent } from './components/alerts/alerts.component';
+import { AdvertisementComponent } from './components/advertisement/advertisement.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AlertsComponent } from './components/alerts/alerts.component';
     TakeActionComponent,
     EcoChoiceComponent,
     HomeComponent,
-    AlertsComponent
+    AlertsComponent,
+    AdvertisementComponent
   ],
   imports: [
     FormsModule,
