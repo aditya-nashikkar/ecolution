@@ -1,2 +1,77 @@
 <eco-top-nav [activeLink]=activeLink></eco-top-nav>
-eco-choice!
+<div class="container adjust-main-content">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 mt-4">
+            <div class="form-group">
+                <label for="select-product">What are you looking for?</label>
+                <select name="select-product" id="select-product" class="form-control form-control-md"
+                    (change)="selectProduct()" [(ngModel)]="selectedProjectName">
+                    <option value="">Select products</option>
+                    <option *ngFor="let availableProduct of availableProducts" [value]="availableProduct">
+                        {{ availableProduct }}
+                    </option>
+                </select>
+            </div>
+            <div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center"
+                data-mdb-ride="carousel" *ngIf="this.selectedProject.alternativeProducts.length">
+                <div class="carousel-inner py-4">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block">
+                                <div class="card">
+                                    <img [src]="selectedProject?.searchedProduct?.imagePath"
+                                        class="card-img-top img-fluid" alt="..." style="max-height: 250px;" />
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ CARBON_FOOTPRINT }}</h5>
+                                        <p class="card-text">
+                                            Some quick example text to build on the card title and make up the bulk
+                                            of the card's content.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-none d-lg-block">
+                                <div class="card">
+                                    <img [src]="selectedAlternativeProduct?.imagePath"
+                                        class="card-img-top img-fluid" alt="..." style="max-height: 250px;" />
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ CARBON_FOOTPRINT }}</h5>
+                                        <p class="card-text">
+                                            Some quick example text to build on the card title and make up the bulk
+                                            of the card's content.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-6 mt-4" *ngIf="this.selectedProject.alternativeProducts.length">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-centered img-center-aligned border">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                        <img [src]="selectedProject.searchedProduct.imagePath" class="w-100" />
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12 col-lg-12 login-icon">
+                    <i class="fa fa-recycle" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <ng-container *ngFor="let ap of selectedProject?.alternativeProducts; let i=index">
+                    <div class="col-md-4 col-lg-4 col-centered img-center-aligned cursor-pointer"
+                        [class.border]="ap.isSelected" [class.border-success]="ap.isSelected"
+                        (click)="selectAlternativeProduct(i)">
+                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                            <img [src]="ap?.imagePath" class="w-100" />
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
