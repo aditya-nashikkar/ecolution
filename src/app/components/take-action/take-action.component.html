@@ -17,18 +17,16 @@
             <div class="col-md-12 col-lg-12 shadow p-4 mb-4 bg-white" [class.add-scroll]="selectedQuestionNumber === 3">
                 <p class="text-black-50">Question {{ selectedQuestionNumber + 1 }} of {{ userQuestion.length }}</p>
                 <h3 class="pb-3">{{ selectedQuestion?.question }}</h3>
-                <form #myForm="ngForm" (submit)="templateForm(myForm.value)">
-                    <ng-container *ngFor="let option of selectedQuestion.options">
-                        <div class="custom-control custom-radio cursor-pointer" style="padding-bottom: 30px;">
-                            <input type="radio" [attr.id]="option?.optionKey" class="custom-control-input cursor-pointer" 
-                            [value]="option.optionValue" [(ngModel)]="selectedQuestion.selectedValue" name="{{selectedQuestion.radioButtonName}}" ngModel>
-                            <label class="custom-control-label cursor-pointer" [attr.for]="option?.optionKey">
-                                {{ option.optionKey }}
-                            </label>
-                        </div>
-                    </ng-container>
-                    <button type="submit" class="btn btn-danger btn-lg btn-block">Submit</button>
-                </form>
+                <ng-container *ngFor="let option of selectedQuestion.options">
+                    <div class="custom-control custom-radio cursor-pointer" style="padding-bottom: 30px;">
+                        <input type="radio" [attr.id]="option?.optionKey" class="custom-control-input cursor-pointer"
+                            [value]="option.optionValue" [(ngModel)]="selectedOptions[selectedQuestionNumber]"
+                            name="{{selectedQuestion.radioButtonName}}" ngModel>
+                        <label class="custom-control-label cursor-pointer" [attr.for]="option?.optionKey">
+                            {{ option.optionKey }}
+                        </label>
+                    </div>
+                </ng-container>
             </div>
             <ul class="pagination float-right">
                 <li class="page-item"><a class="page-link cursor-pointer" *ngIf="selectedQuestionNumber > 0"
@@ -36,6 +34,8 @@
                 <li class="page-item"><a class="page-link cursor-pointer" *ngIf="selectedQuestionNumber < 3"
                         (click)="getQuestionByNumber('next')">Next</a></li>
             </ul>
+            <button *ngIf="selectedQuestionNumber === 3" type="submit" class="btn btn-success btn-lg btn-block"
+                (click)="submitForm()">Submit</button>
         </div>
         <div class="col-md-4 col-lg-4">
             <div class="col-md-12 col-lg-12 shadow p-4 mb-4 bg-white">

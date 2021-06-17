@@ -6,6 +6,5 @@ export interface UserQuestion {
     options: Array<QuestionOption>;
     radioButtonName: string;
     factImage: string;
-    selectedValue: string;
     fact: Fact;
 }

@@ -186,7 +186,6 @@ export class TakeActionConstant {
   static readonly USER_QUESTIONS = [
     {
       question: 'Please select your applicable age group',
-      selectedValue: 'below 18',
       options: [
         {
           optionKey: 'Below 18',
@@ -213,7 +212,6 @@ export class TakeActionConstant {
     },
     {
       question: 'Please select your Geographic area',
-      selectedValue: 'Rural',
       options: [
         {
           optionKey: 'Rural (Population equal to 10,000 and above and less than 1 lakh)',
@@ -235,7 +233,6 @@ export class TakeActionConstant {
     },
     {
       question: 'Please select your profession',
-      selectedValue: 'Student',
       options: [
         {
           optionKey: 'Student',
@@ -273,7 +270,6 @@ export class TakeActionConstant {
     },
     {
       question: 'Please select your state',
-      selectedValue: 'Andaman and Nicobar Islands',
       options: TakeActionConstant.INDIAN_STATE_NAMES,
       radioButtonName: 'City',
       factImage: './../../../assets/images/question/question_4.jpg',

@@ -16,6 +16,7 @@ export class TakeActionComponent implements OnInit {
   userQuestion: Array<UserQuestion> = takeActionConstant.USER_QUESTIONS;
   selectedQuestionNumber = 0;
   selectedQuestion = this.userQuestion[this.selectedQuestionNumber];
+  selectedOptions = ['below 18', 'Rural', 'Student', 'Andaman and Nicobar Islands'];
 
   constructor() { }
 
@@ -31,7 +32,8 @@ export class TakeActionComponent implements OnInit {
     this.selectedQuestion = this.userQuestion[this.selectedQuestionNumber];
   }
 
-  templateForm(value: any): void {
+  submitForm(): void {
+    
   }
 
 }
