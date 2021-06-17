@@ -153,15 +153,15 @@ export class TakeActionConstant {
             options: [
                 {
                     optionKey: 'Below 18',
-                    optionValue: 'below_18'
+                    optionValue: 'below 18'
                 },
                 {
                     optionKey: '18-45',
-                    optionValue: 'in_18_45'
+                    optionValue: '18 - 45'
                 },
                 {
                     optionKey: 'Above 45',
-                    optionValue: 'above_45'
+                    optionValue: 'above 45'
                 }
             ],
             factImage: './../../../assets/images/question/question_1.jpg',
@@ -175,11 +175,11 @@ export class TakeActionConstant {
             options: [
                 {
                     optionKey: 'Rural (Population equal to 10,000 and above and less than 1 lakh)',
-                    optionValue: 'rural'
+                    optionValue: 'Rural'
                 },
                 {
                     optionKey: 'Urban (Population 10 lakh and above)',
-                    optionValue: 'urban'
+                    optionValue: 'Urban'
                 }
             ],
             factImage: './../../../assets/images/question/question_2.jpg',
@@ -193,23 +193,23 @@ export class TakeActionConstant {
             options: [
                 {
                     optionKey: 'Student',
-                    optionValue: 'student'
+                    optionValue: 'Student'
                 },
                 {
                     optionKey: 'Professional',
-                    optionValue: 'professional'
+                    optionValue: 'Professional'
                 },
                 {
                     optionKey: 'Self-employed',
-                    optionValue: 'self-employed'
+                    optionValue: 'Self-employed'
                 },
                 {
                     optionKey: 'Housewife',
-                    optionValue: 'housewife'
+                    optionValue: 'Housewife'
                 },
                 {
                     optionKey: 'Other',
-                    optionValue: 'other'
+                    optionValue: 'Other'
                 }
             ],
             factImage: './../../../assets/images/question/question_3.jpg',
