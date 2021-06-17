@@ -9,9 +9,6 @@
                 </div>
             </ng-container>
         </div>
-        <!-- <p>
-            <a class="btn btn-primary btn-lg float-right" href="#" role="button">Learn more &raquo;</a>
-        </p> -->
     </div>
 </div>
 <div class="container-fluid">
@@ -20,23 +17,29 @@
             <div class="col-md-12 col-lg-12 shadow p-4 mb-4 bg-white" [class.add-scroll]="selectedQuestionNumber === 3">
                 <p class="text-black-50">Question {{ selectedQuestionNumber + 1 }} of {{ userQuestion.length }}</p>
                 <h3 class="pb-3">{{ selectedQuestion?.question }}</h3>
-                <ng-container *ngFor="let option of selectedQuestion.options">
-                    <div class="custom-control custom-radio cursor-pointer" style="padding-bottom: 30px;">
-                        <input type="radio" class="custom-control-input cursor-pointer" [attr.id]="option.optionKey"
-                            [attr.name]="selectedQuestion?.question" [value]="option.optionValue">
-                        <label class="custom-control-label cursor-pointer" [attr.for]="option.optionKey">{{ option.optionKey }}</label>
-                    </div>
-                </ng-container>
+                <form #myForm="ngForm" (submit)="templateForm(myForm.value)">
+                    <ng-container *ngFor="let option of selectedQuestion.options">
+                        <div class="custom-control custom-radio cursor-pointer" style="padding-bottom: 30px;">
+                            <input type="radio" [attr.id]="option?.optionKey" class="custom-control-input cursor-pointer" 
+                            [value]="option.optionValue" [(ngModel)]="selectedQuestion.selectedValue" name="{{selectedQuestion.radioButtonName}}" ngModel>
+                            <label class="custom-control-label cursor-pointer" [attr.for]="option?.optionKey">
+                                {{ option.optionKey }}
+                            </label>
+                        </div>
+                    </ng-container>
+                    <button type="submit" class="btn btn-danger btn-lg btn-block">Submit</button>
+                </form>
             </div>
             <ul class="pagination float-right">
-                <li class="page-item"><a class="page-link cursor-pointer" *ngIf="selectedQuestionNumber > 0" (click)="getQuestionByNumber('previous')">Previous</a></li>
-                <li class="page-item"><a class="page-link cursor-pointer" *ngIf="selectedQuestionNumber < 3" (click)="getQuestionByNumber('next')">Next</a></li>
+                <li class="page-item"><a class="page-link cursor-pointer" *ngIf="selectedQuestionNumber > 0"
+                        (click)="getQuestionByNumber('previous')">Previous</a></li>
+                <li class="page-item"><a class="page-link cursor-pointer" *ngIf="selectedQuestionNumber < 3"
+                        (click)="getQuestionByNumber('next')">Next</a></li>
             </ul>
         </div>
         <div class="col-md-4 col-lg-4">
             <div class="col-md-12 col-lg-12 shadow p-4 mb-4 bg-white">
-                <img class="img-fluid" [src]="selectedQuestion.factImage" alt="Chania" width="460"
-                    height="345">
+                <img class="img-fluid" [src]="selectedQuestion.factImage" alt="Chania" width="460" height="345">
                 <h6 class="mt-2 p-2 pb- 0 text-bolder">{{ selectedQuestion?.fact?.factHeader }}</h6>
                 <p class="p-2 mt-0">{{ selectedQuestion?.fact?.factMainContent }}</p>
             </div>
