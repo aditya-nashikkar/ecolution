@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserQuestion } from 'src/app/models/user-question';
+import { UserResponse } from 'src/app/models/user-response';
 import { TakeActionConstant as takeActionConstant } from './take-action.constant';
 
 @Component({
@@ -15,6 +16,7 @@ export class TakeActionComponent implements OnInit {
   userQuestion: Array<UserQuestion> = takeActionConstant.USER_QUESTIONS;
   selectedQuestionNumber = 0;
   selectedQuestion = this.userQuestion[this.selectedQuestionNumber];
+  selectedOptions = ['below 18', 'Rural', 'Student', 'Andaman and Nicobar Islands'];
 
   constructor() { }
 
@@ -28,6 +30,10 @@ export class TakeActionComponent implements OnInit {
       this.selectedQuestionNumber -= 1;
     }
     this.selectedQuestion = this.userQuestion[this.selectedQuestionNumber];
+  }
+
+  submitForm(): void {
+    
   }
 
 }
