@@ -2,7 +2,7 @@ export class TakeActionConstant {
 
     static readonly INDIAN_STATE_NAMES = [
         {
-          optionKey: 'Andaman and Nicobar Islands',
+          optionKey: 'And       aman and Nicobar Islands',
           optionValue: 'Andaman and Nicobar Islands'
         },
         {
