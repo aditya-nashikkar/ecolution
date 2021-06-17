@@ -3,14 +3,38 @@
     <div class="row">
         <div class="col-md-6 col-lg-6 mt-4">
             <div class="form-group">
-                <select name="" id="" class="form-control form-control-md">
+                <label for="select-product">What are you looking for?</label>
+                <select name="select-product" id="select-product" class="form-control form-control-md"
+                    (change)="selectProduct()" [(ngModel)]="selectedProjectName">
                     <option value="">Select products</option>
                     <option *ngFor="let availableProduct of availableProducts" [value]="availableProduct">
                         {{ availableProduct }}
                     </option>
                 </select>
-              </div>
+            </div>
         </div>
-        <div class="col-md-6 col-lg-6">asdas</div>
+        <div class="col-md-6 col-lg-6 mt-4">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-centered img-center-aligned">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                        <img [src]="selectedProject.searchedProduct.imagePath" class="w-100" />
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+               <div class="col-md-12 col-lg-12 login-icon">
+                <i class="fa fa-recycle" aria-hidden="true"></i>
+               </div>
+            </div>
+            <div class="row mt-4">
+                <ng-container *ngFor="let ap of selectedProject?.alternativeProducts">
+                    <div class="col-md-4 col-lg-4 col-centered img-center-aligned">
+                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                            <img [src]="ap?.imagePath" class="w-100" />
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
     </div>
 </div>

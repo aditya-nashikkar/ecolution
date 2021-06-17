@@ -2,7 +2,7 @@ import { AlternativeProduct } from "src/app/models/alternative-product";
 
 export class EcoChoiceConstant {
 
-    static readonly AVAILABLE_PRODUCTS: Array<string> = ['Toothbrush', 'Bottle', 'Plastic bag', 'Disposable cup', 'Straw'];
+    static readonly AVAILABLE_PRODUCTS: Array<string> = ['Toothbrush', 'Bottle', 'Plastic bag', 'Disposable cups', 'Straw'];
 
     static readonly PRODUCTS_LIST: Array<AlternativeProduct> = [
         {
@@ -34,12 +34,12 @@ export class EcoChoiceConstant {
                 {
                     productName: 'Clay water bottle',
                     carbonFootprint: 50,
-                    imagePath: './../../../assets/images/eco-choice/WaterBottle-Clay.jpg'
+                    imagePath: './../../../assets/images/eco-choice/WaterBottle-Clay.jfif'
                 },
                 {
                     productName: 'Steel water bottle',
                     carbonFootprint: 40,
-                    imagePath: './../../../assets/images/eco-choice/WaterBottle-Steel.jpg'
+                    imagePath: './../../../assets/images/eco-choice/WaterBottle-Steel.png'
                 }
             ]
         },
@@ -47,7 +47,7 @@ export class EcoChoiceConstant {
             searchedProduct: {
                 productName: 'Plastic bag',
                 carbonFootprint: 60,
-                imagePath: './../../../assets/images/eco-choice/WaterBottle-Plastic.jpg'
+                imagePath: './../../../assets/images/eco-choice/Bag-plastic.jpg'
             },
             alternativeProducts: [
                 {
@@ -66,7 +66,7 @@ export class EcoChoiceConstant {
             searchedProduct: {
                 productName: 'Disposable cups',
                 carbonFootprint: 60,
-                imagePath: './../../../assets/images/eco-choice/Cup-Plastic.jpg'
+                imagePath: './../../../assets/images/eco-choice/Cup-Plastic.jfif'
             },
             alternativeProducts: [
                 {
@@ -80,7 +80,7 @@ export class EcoChoiceConstant {
             searchedProduct: {
                 productName: 'Straw',
                 carbonFootprint: 60,
-                imagePath: './../../../assets/images/eco-choice/Straw-Plastic.jpg'
+                imagePath: './../../../assets/images/eco-choice/Straw-Plastic.jfif'
             },
             alternativeProducts: [
                 {
@@ -91,12 +91,12 @@ export class EcoChoiceConstant {
                 {
                     productName: 'Bamboo straw',
                     carbonFootprint: 40,
-                    imagePath: './../../../assets/images/eco-choice/Straw-Bamboo.jpg'
+                    imagePath: './../../../assets/images/eco-choice/Straw-Bamboo.jfif'
                 },
                 {
                     productName: 'Reusable straw',
                     carbonFootprint: 40,
-                    imagePath: './../../../assets/images/eco-choice/Straw-reusable.jpg'
+                    imagePath: './../../../assets/images/eco-choice/Straw-reusable.jpeg'
                 }
             ]
         },

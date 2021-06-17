@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { EcoChoiceComponent } from './components/eco-choice/eco-choice.component';
 import { HomeComponent } from './components/home/home.component';
