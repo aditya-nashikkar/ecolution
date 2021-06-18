@@ -35,10 +35,10 @@ export class EcoChoiceComponent implements OnInit {
   selectProduct(): void {
     this.advertisements = [];
     this.selectedProject = this.productsList.filter(fl => fl.searchedProduct.productName === this.selectedProjectName)[0];
-    console.log(this.selectedProject);
+    
     this.selectedAlternativeProduct = this.selectedProject.alternativeProducts[0];
     this.advertisements = this.selectedAlternativeProduct.advertisement;
-    console.log(this.selectedAlternativeProduct);
+    
   }
 
   selectAlternativeProduct(index: number): void {
@@ -49,7 +49,7 @@ export class EcoChoiceComponent implements OnInit {
     this.selectedProject.alternativeProducts[index].isSelected = true;
     this.selectedAlternativeProduct = this.selectedProject.alternativeProducts[index];
     this.advertisements = this.selectedAlternativeProduct.advertisement;
-    console.log(this.advertisements);
+    
   }
 
 }

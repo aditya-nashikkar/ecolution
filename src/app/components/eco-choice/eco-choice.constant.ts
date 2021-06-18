@@ -89,15 +89,15 @@ export class EcoChoiceConstant {
                     advertisement: [
                         {
                             productName: 'Steel water bottle',
-                            price: '600',
+                            price: '299',
                             imagePath: './../../../assets/images/eco-choice/WaterBottle-Steel.png',
                             sellerName: 'Newdigital...'
                         },
                         {
                             productName: 'Steel water bottle',
-                            price: '500',
-                            imagePath: './../../../assets/images/eco-choice/WaterBottle-Steel.png',
-                            sellerName: 'Rdigital...'
+                            price: '199',
+                            imagePath: './../../../assets/images/eco-choice/signoraware.png',
+                            sellerName: 'Vmart...'
                         }
                     ]
                 }
