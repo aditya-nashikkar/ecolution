@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'eco-advertisement',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdvertisementComponent implements OnInit {
 
+  @Input() imagePath = '';
+  @Input() productName = '';
+  @Input() price = '';
+  @Input() sellerName = '';
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.imagePath)
   }
 
 }
