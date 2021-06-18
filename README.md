@@ -11,3 +11,7 @@
 ## Demo video
 
 https://www.youtube.com/watch?v=rt37Qy9btjA
+
+
+##Authors
+Garima Tripathi, Deep Shikha, Vidya Naik, Jeffy Thomas, Aditya Nashikkar
