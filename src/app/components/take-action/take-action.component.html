@@ -14,7 +14,8 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-8 col-lg-8">
-            <div class="col-md-12 col-lg-12 shadow p-4 mb-4 bg-white" [class.add-scroll]="selectedQuestionNumber === 3">
+            <div class="col-md-12 col-lg-12 shadow p-4 mb-4 bg-white"
+                [class.add-scroll]="selectedQuestionNumber === 3 || selectedQuestionNumber === 2">
                 <p class="text-black-50">Question {{ selectedQuestionNumber + 1 }} of {{ userQuestion.length }}</p>
                 <h3 class="pb-3">{{ selectedQuestion?.question }}</h3>
                 <ng-container *ngFor="let option of selectedQuestion.options">
@@ -42,6 +43,31 @@
                 <img class="img-fluid" [src]="selectedQuestion.factImage" alt="Chania" width="460" height="345">
                 <h6 class="mt-2 p-2 pb- 0 text-bolder">{{ selectedQuestion?.fact?.factHeader }}</h6>
                 <p class="p-2 mt-0">{{ selectedQuestion?.fact?.factMainContent }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button type="button" id="modal-trigger" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="display: none;">
+    Open modal
+</button>
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Carbon footprint comparison You/ Your city</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm">
+                        <div id="barChart" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

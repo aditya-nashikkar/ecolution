@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserQuestion } from 'src/app/models/user-question';
-import { UserResponse } from 'src/app/models/user-response';
+import { TakeActionService } from 'src/app/services/take-action.service';
 import { TakeActionConstant as takeActionConstant } from './take-action.constant';
+import * as HighCharts from 'highcharts';
 
 @Component({
   selector: 'eco-take-action',
@@ -17,10 +18,40 @@ export class TakeActionComponent implements OnInit {
   selectedQuestionNumber = 0;
   selectedQuestion = this.userQuestion[this.selectedQuestionNumber];
   selectedOptions = ['below 18', 'Rural', 'Student', 'Andaman and Nicobar Islands'];
+  cityFootPrint = [7];
+  userFootPrint = [];
 
-  constructor() { }
+  finalObject = [
+    {
+      Age: [
+        {
+          'Below 18': 0,
+          '18 to 45': 1,
+          'Above 45': 0
+        }
+      ],
+      Location: [
+        {
+          'Rural': 0,
+          'Urban': 1
+        }
+      ],
+      Occupation: [
+        {
+          'Student': 1,
+          'Professional': 0,
+          'Self-emplyed': 0,
+          'Housewife': 0,
+          'Other': 0
+        }
+      ]
+    }
+  ];
+
+  constructor(private takeActionService: TakeActionService) { }
 
   ngOnInit(): void {
+    
   }
 
   getQuestionByNumber(step: string) {
@@ -33,7 +64,51 @@ export class TakeActionComponent implements OnInit {
   }
 
   submitForm(): void {
-    
+    this.takeActionService.predict(this.finalObject).subscribe((data) => {
+      this.userFootPrint.push(data.prediction);
+      this.barChartPopulation();
+      document.getElementById('modal-trigger').click();
+    })
+  }
+
+  barChartPopulation() {
+    HighCharts.chart('barChart', {
+      chart: {
+        type: 'column'
+      },
+      title: {
+        text: 'Carbon footprint'
+      },
+      xAxis: {
+        categories: ['Comparision']
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: 'Carbon footprint %age',
+          align: 'high'
+        },
+      },
+      tooltip: {
+        valueSuffix: '% carbon footprint'
+      },
+      plotOptions: {
+        bar: {
+          dataLabels: {
+            enabled: true
+          }
+        }
+      },
+      series: [{
+        type: undefined,
+        name: 'Yours',
+        data: this.userFootPrint
+      }, {
+        type: undefined,
+        name: 'Entire city',
+        data: this.cityFootPrint
+      }]
+    });
   }
 
 }
