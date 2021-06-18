@@ -12,8 +12,8 @@
                     </option>
                 </select>
             </div>
-            <div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center"
-                data-mdb-ride="carousel" *ngIf="this.selectedProject.alternativeProducts.length">
+            <div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center" data-mdb-ride="carousel"
+                *ngIf="this.selectedProject.alternativeProducts.length">
                 <div class="carousel-inner py-4">
                     <div class="carousel-item active">
                         <div class="row">
@@ -32,8 +32,8 @@
                             </div>
                             <div class="col-lg-6 d-none d-lg-block">
                                 <div class="card">
-                                    <img [src]="selectedAlternativeProduct?.imagePath"
-                                        class="card-img-top img-fluid" alt="..." style="max-height: 250px;" />
+                                    <img [src]="selectedAlternativeProduct?.imagePath" class="card-img-top img-fluid"
+                                        alt="..." style="max-height: 250px;" />
                                     <div class="card-body">
                                         <h5 class="card-title">{{ CARBON_FOOTPRINT }}</h5>
                                         <p class="card-text">
@@ -72,6 +72,17 @@
                     </div>
                 </ng-container>
             </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row" *ngIf="advertisements">
+            <ng-container *ngFor="let advertisement of advertisements">
+                <div class="col-md-3 col-lg-3">
+                    <eco-advertisement [imagePath]="advertisement?.imagePath" [productName]="advertisement?.productName"
+                        [price]="advertisement?.price" [sellerName]="advertisement?.sellerName"></eco-advertisement>
+                </div>
+            </ng-container>
         </div>
     </div>
 </div>

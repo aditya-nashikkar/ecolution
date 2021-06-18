@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Advertisement } from 'src/app/models/advertisement';
 import { AlternativeProduct } from 'src/app/models/alternative-product';
 import { EcoChoiceConstant as ecoChoiceConstant } from './eco-choice.constant';
 
@@ -17,16 +18,13 @@ export class EcoChoiceComponent implements OnInit {
     searchedProduct: {
       productName: '',
       carbonFootprint: 0,
-      imagePath: ''
+      imagePath: '',
     }, 
     alternativeProducts: []
   };
-  selectedAlternativeProduct = {
-    productName: '',
-    carbonFootprint: 0,
-    imagePath: ''
-  };
+  selectedAlternativeProduct: any;
   selectedProjectName = '';
+  advertisements: Array<Advertisement> = [];
 
   constructor() { }
 
@@ -37,15 +35,17 @@ export class EcoChoiceComponent implements OnInit {
   selectProduct(): void {
     this.selectedProject = this.productsList.filter(fl => fl.searchedProduct.productName === this.selectedProjectName)[0];
     this.selectedAlternativeProduct = this.selectedProject.alternativeProducts[0];
+    console.log(this.selectedAlternativeProduct);
   }
 
   selectAlternativeProduct(index: number): void {
-
     for (const counter in this.selectedProject.alternativeProducts) {
       this.selectedProject.alternativeProducts[counter].isSelected = false;
     }
     this.selectedProject.alternativeProducts[index].isSelected = true;
     this.selectedAlternativeProduct = this.selectedProject.alternativeProducts[index];
+    this.advertisements = this.selectedAlternativeProduct.advertisement;
+    console.log(this.advertisements);
   }
 
 }
