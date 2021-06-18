@@ -48,11 +48,12 @@
     </div>
 </div>
 
-<button type="button" id="modal-trigger" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="display: none;">
+<button type="button" id="modal-trigger" class="btn btn-primary" data-toggle="modal" data-target="#myModal"
+    style="display: none;">
     Open modal
 </button>
 <div class="modal fade" id="myModal">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Carbon footprint comparison You/ Your city</h4>
@@ -60,7 +61,20 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-sm">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="thumbnail text-center">
+                            <img src="./../../../assets/images/take-action/take-action.png" alt=""
+                                class="img-responsive" style="max-width: 100%;">
+                            <div class="caption">
+                                <h3 class="font-weight-bold">Your plastic footprint is</h3>
+                                <p><span style="font-size: 28px;">1.4 kg</span>/ per year</p>
+                                <p>That's <u>above averge</u> in your city</p>
+                                <p>Unfortunately plastic is embedded in almost every aspect of our lives, with
+                                    alternatives often difficult to find. But there are ways to make a difference.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
                         <div id="barChart" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto">
                         </div>
                     </div>

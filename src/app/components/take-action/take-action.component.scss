@@ -2,3 +2,34 @@
   max-height: 450px;
   overflow-y: scroll;
 }
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.thumbnail {
+  position: relative;
+}
+
+.caption {
+  position: absolute;
+  color: #ffffff;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+// .thumbnail:after {
+//   content:"";
+//   display:block;
+//   position:absolute;
+//   top:0;
+//   bottom:0;
+//   left:0;
+//   right:0;
+//   background:rgba(0,0,0,0.4);
+// }

@@ -18,7 +18,7 @@ export class TakeActionComponent implements OnInit {
   selectedQuestionNumber = 0;
   selectedQuestion = this.userQuestion[this.selectedQuestionNumber];
   selectedOptions = ['below 18', 'Rural', 'Student', 'Andaman and Nicobar Islands'];
-  cityFootPrint = [7];
+  cityFootPrint = [3.7];
   userFootPrint = [];
 
   finalObject = [
@@ -48,10 +48,12 @@ export class TakeActionComponent implements OnInit {
     }
   ];
 
+  message = '';
+
   constructor(private takeActionService: TakeActionService) { }
 
   ngOnInit(): void {
-    
+
   }
 
   getQuestionByNumber(step: string) {
@@ -64,9 +66,16 @@ export class TakeActionComponent implements OnInit {
   }
 
   submitForm(): void {
+    this.userFootPrint = [];
     this.takeActionService.predict(this.finalObject).subscribe((data) => {
       this.userFootPrint.push(data.prediction);
       this.barChartPopulation();
+      if (parseInt(data.prediction) > parseInt(this.userFootPrint[0])) {
+        this.message = 'Your carbon footprint is ' + (parseInt(data.prediction) - parseInt(this.userFootPrint[0])) + ' lesser than your entire city\'\s footprint';
+      } else {
+        this.message = 'Your carbon footprint is ' + (parseInt(this.userFootPrint[0]) - parseInt(data.prediction)) + ' greater than your entire city\'\s footprint';
+      }
+      console.log(this.message);
       document.getElementById('modal-trigger').click();
     })
   }
@@ -85,12 +94,12 @@ export class TakeActionComponent implements OnInit {
       yAxis: {
         min: 0,
         title: {
-          text: 'Carbon footprint %age',
+          text: 'Carbon footprint (KG)',
           align: 'high'
         },
       },
       tooltip: {
-        valueSuffix: '% carbon footprint'
+        valueSuffix: ' carbon footprint (KG)'
       },
       plotOptions: {
         bar: {
@@ -101,11 +110,11 @@ export class TakeActionComponent implements OnInit {
       },
       series: [{
         type: undefined,
-        name: 'Yours',
+        name: 'Your annual footprint',
         data: this.userFootPrint
       }, {
         type: undefined,
-        name: 'Entire city',
+        name: 'Avg in your city',
         data: this.cityFootPrint
       }]
     });
