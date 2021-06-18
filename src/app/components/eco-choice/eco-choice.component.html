@@ -13,7 +13,7 @@
                 </select>
             </div>
             <div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center" data-mdb-ride="carousel"
-                *ngIf="this.selectedProject.alternativeProducts.length">
+                *ngIf="selectedProject?.alternativeProducts?.length">
                 <div class="carousel-inner py-4">
                     <div class="carousel-item active">
                         <div class="row">
@@ -22,10 +22,12 @@
                                     <img [src]="selectedProject?.searchedProduct?.imagePath"
                                         class="card-img-top img-fluid" alt="..." style="max-height: 250px;" />
                                     <div class="card-body">
-                                        <h5 class="card-title">{{ CARBON_FOOTPRINT }}</h5>
-                                        <p class="card-text">
-                                            Some quick example text to build on the card title and make up the bulk
-                                            of the card's content.
+                                        <h5 class="card-title font-weight-bold">{{ CARBON_FOOTPRINT }}</h5>
+                                        <p class="card-text font-weight-bold"
+                                            [class.text-success]="selectedProject?.searchedProduct?.carbonFootprint === 'Low'"
+                                            [class.text-warning]="selectedProject?.searchedProduct?.carbonFootprint === 'Medium'"
+                                            [class.text-danger]="selectedProject?.searchedProduct?.carbonFootprint === 'High'">
+                                            {{ selectedProject?.searchedProduct?.carbonFootprint }}
                                         </p>
                                     </div>
                                 </div>
@@ -35,10 +37,12 @@
                                     <img [src]="selectedAlternativeProduct?.imagePath" class="card-img-top img-fluid"
                                         alt="..." style="max-height: 250px;" />
                                     <div class="card-body">
-                                        <h5 class="card-title">{{ CARBON_FOOTPRINT }}</h5>
-                                        <p class="card-text">
-                                            Some quick example text to build on the card title and make up the bulk
-                                            of the card's content.
+                                        <h5 class="card-title font-weight-bold">{{ CARBON_FOOTPRINT }}</h5>
+                                        <p class="card-text font-weight-bold"
+                                            [class.text-success]="selectedAlternativeProduct?.carbonFootprint === 'Low'"
+                                            [class.text-warning]="selectedAlternativeProduct?.carbonFootprint === 'Medium'"
+                                            [class.text-danger]="selectedAlternativeProduct?.carbonFootprint === 'High'">
+                                            {{ selectedAlternativeProduct?.carbonFootprint }}
                                         </p>
                                     </div>
                                 </div>
@@ -74,7 +78,7 @@
             </div>
         </div>
     </div>
-    <hr>
+    <hr *ngIf="advertisements?.length > 0">
     <div class="container">
         <div class="row" *ngIf="advertisements">
             <ng-container *ngFor="let advertisement of advertisements">
