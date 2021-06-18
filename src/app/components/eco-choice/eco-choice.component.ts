@@ -17,7 +17,7 @@ export class EcoChoiceComponent implements OnInit {
   selectedProject: AlternativeProduct = {
     searchedProduct: {
       productName: '',
-      carbonFootprint: 0,
+      carbonFootprint: '0',
       imagePath: '',
     }, 
     alternativeProducts: []
@@ -33,12 +33,16 @@ export class EcoChoiceComponent implements OnInit {
   }
 
   selectProduct(): void {
+    this.advertisements = [];
     this.selectedProject = this.productsList.filter(fl => fl.searchedProduct.productName === this.selectedProjectName)[0];
+    console.log(this.selectedProject);
     this.selectedAlternativeProduct = this.selectedProject.alternativeProducts[0];
+    this.advertisements = this.selectedAlternativeProduct.advertisement;
     console.log(this.selectedAlternativeProduct);
   }
 
   selectAlternativeProduct(index: number): void {
+    this.advertisements = [];
     for (const counter in this.selectedProject.alternativeProducts) {
       this.selectedProject.alternativeProducts[counter].isSelected = false;
     }

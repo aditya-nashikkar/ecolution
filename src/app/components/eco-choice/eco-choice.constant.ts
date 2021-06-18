@@ -8,13 +8,13 @@ export class EcoChoiceConstant {
         {
             searchedProduct: {
                 productName: 'Toothbrush',
-                carbonFootprint: 60,
+                carbonFootprint: 'High',
                 imagePath: './../../../assets/images/eco-choice/Toothbrush-Plastic.jpg'
             },
             alternativeProducts: [
                 {
                     productName: 'Bamboo toothbrush',
-                    carbonFootprint: 50,
+                    carbonFootprint: 'Low',
                     imagePath: './../../../assets/images/eco-choice/Toothbrush-Bamboo.jpg',
                     isSelected: true,
                     advertisement: [
@@ -34,7 +34,7 @@ export class EcoChoiceConstant {
                 },
                 {
                     productName: 'Reusable brush',
-                    carbonFootprint: 40,
+                    carbonFootprint: 'Medium',
                     imagePath: './../../../assets/images/eco-choice/toothbrush-reusable.jpg',
                     isSelected: false,
                     advertisement: [
@@ -57,13 +57,13 @@ export class EcoChoiceConstant {
         {
             searchedProduct: {
                 productName: 'Bottle',
-                carbonFootprint: 60,
+                carbonFootprint: 'High',
                 imagePath: './../../../assets/images/eco-choice/WaterBottle-Plastic-UseNThrow.jpg'
             },
             alternativeProducts: [
                 {
                     productName: 'Clay water bottle',
-                    carbonFootprint: 50,
+                    carbonFootprint: 'Low',
                     imagePath: './../../../assets/images/eco-choice/WaterBottle-Clay.jpg',
                     isSelected: true,
                     advertisement: [
@@ -83,7 +83,7 @@ export class EcoChoiceConstant {
                 },
                 {
                     productName: 'Steel water bottle',
-                    carbonFootprint: 40,
+                    carbonFootprint: 'Medium',
                     imagePath: './../../../assets/images/eco-choice/WaterBottle-Steel.png',
                     isSelected: false,
                     advertisement: [
@@ -106,13 +106,13 @@ export class EcoChoiceConstant {
         {
             searchedProduct: {
                 productName: 'Plastic bag',
-                carbonFootprint: 60,
+                carbonFootprint: 'High',
                 imagePath: './../../../assets/images/eco-choice/Bag-plastic.jpg'
             },
             alternativeProducts: [
                 {
                     productName: 'Plastic reusable bag',
-                    carbonFootprint: 50,
+                    carbonFootprint: 'Medium',
                     imagePath: './../../../assets/images/eco-choice/Bag-plastic-Reusable.jpg',
                     isSelected: true,
                     advertisement: [
@@ -132,7 +132,7 @@ export class EcoChoiceConstant {
                 },
                 {
                     productName: 'Jute bag',
-                    carbonFootprint: 40,
+                    carbonFootprint: 'Low',
                     imagePath: './../../../assets/images/eco-choice/Jute-bag-No-Plastic.jpg',
                     isSelected: false,
                     advertisement: [
@@ -155,13 +155,13 @@ export class EcoChoiceConstant {
         {
             searchedProduct: {
                 productName: 'Disposable cups',
-                carbonFootprint: 60,
+                carbonFootprint: 'High',
                 imagePath: './../../../assets/images/eco-choice/Cup-Plastic.jfif'
             },
             alternativeProducts: [
                 {
                     productName: 'Thermacol cup',
-                    carbonFootprint: 50,
+                    carbonFootprint: 'Medium',
                     imagePath: './../../../assets/images/eco-choice/Cup-thermacol.jpg',
                     isSelected: true,
                     advertisement: [
@@ -184,13 +184,13 @@ export class EcoChoiceConstant {
         {
             searchedProduct: {
                 productName: 'Straw',
-                carbonFootprint: 60,
+                carbonFootprint: 'High',
                 imagePath: './../../../assets/images/eco-choice/Straw-Plastic.jfif',
             },
             alternativeProducts: [
                 {
                     productName: 'Paper straw',
-                    carbonFootprint: 50,
+                    carbonFootprint: 'Low',
                     imagePath: './../../../assets/images/eco-choice/Straw-paper.jpg',
                     isSelected: true,
                     advertisement: [
@@ -210,7 +210,7 @@ export class EcoChoiceConstant {
                 },
                 {
                     productName: 'Bamboo straw',
-                    carbonFootprint: 40,
+                    carbonFootprint: 'Low',
                     imagePath: './../../../assets/images/eco-choice/Straw-Bamboo.jfif',
                     isSelected: false,
                     advertisement: [
@@ -230,7 +230,7 @@ export class EcoChoiceConstant {
                 },
                 {
                     productName: 'Reusable straw',
-                    carbonFootprint: 40,
+                    carbonFootprint: 'Medium',
                     imagePath: './../../../assets/images/eco-choice/Straw-reusable.jpeg',
                     isSelected: false,
                     advertisement: [
